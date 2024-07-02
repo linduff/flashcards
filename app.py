@@ -47,9 +47,9 @@ def homePage():
 def deck(deck_id):
     deck_cards = []
     for card in cards:
-        if card["deck_id"] == deck_id:
+        if int(card["deck_id"]) == int(deck_id):
             deck_cards.append(card)
-    return render_template("deck.html", cards = "deck_cards")
+    return render_template("deck.html", cards = deck_cards)
 
 if __name__ == "__main__":
     app.run()

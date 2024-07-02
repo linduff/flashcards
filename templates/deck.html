@@ -12,8 +12,8 @@
             <div class="row">
                 {% for card in cards %}
                 <div class="col-sm-3 m-3 p-3 border">
-                    {{card.card_front}}
-                    {{card.card_back}}
+                    <div>{{card.card_front}}</div>
+                    <div>{{card.card_back}}</div>
                 </div>
                 {% endfor %}
             </div>
