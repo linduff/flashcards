@@ -13,10 +13,10 @@
                 <div class="container-fluid">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link active" href="{{ url_for('homePage') }}">Home</a>
+                            <a class="btn" href="{{ url_for('homePage') }}">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">New Deck</a>
+                            <a class="btn" data-bs-toggle="modal" data-bs-target="#myModal">New Card</a>
                         </li>
                     </ul>
                 </div>
@@ -28,6 +28,31 @@
                     <div>{{card.card_back}}</div>
                 </div>
                 {% endfor %}
+            </div>
+        </div>
+
+        <!-- The Modal -->
+        <div class="modal" id="myModal">
+            <div class="modal-dialog">
+            <div class="modal-content">
+        
+                <!-- Modal Header -->
+                <div class="modal-header">
+                <h4 class="modal-title">Modal Heading</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+        
+                <!-- Modal body -->
+                <div class="modal-body">
+                Modal body..
+                </div>
+        
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                </div>
+        
+            </div>
             </div>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
