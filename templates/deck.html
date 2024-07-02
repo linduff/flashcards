@@ -10,8 +10,11 @@
     <body>
         <div class="container p-5 my-5">
             <div class="row">
-                {% for deck in decks %}
-                <a class="col-sm-3 m-3 p-3 border" href="{{url_for('deck', deck_id=deck.deck_id)}}">{{deck.deck_name}}</a>
+                {% for card in cards %}
+                <div class="col-sm-3 m-3 p-3 border">
+                    {{card.card_front}}
+                    {{card.card_back}}
+                </div>
                 {% endfor %}
             </div>
         </div>
