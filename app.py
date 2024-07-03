@@ -45,13 +45,15 @@ def homePage():
         decks.append({"deck_id": len(decks), "deck_name": request.form['deck_name']})
     return render_template("home.html", decks = decks)
 
-@app.route("/deck/<deck_id>")
+@app.route("/deck/<deck_id>", methods=['GET', 'POST'])
 def deck(deck_id):
+    if request.method == 'POST':
+        cards.append({"card_id": len(cards), "deck_id": deck_id, "card_front": request.form['card_front'], "card_back": request.form['card_back']})
     deck_cards = []
     for card in cards:
         if int(card["deck_id"]) == int(deck_id):
             deck_cards.append(card)
-    return render_template("deck.html", cards = deck_cards)
+    return render_template("deck.html", cards = deck_cards, deck_id = deck_id)
 
 if __name__ == "__main__":
     app.run()

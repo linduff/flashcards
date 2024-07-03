@@ -38,18 +38,21 @@
         
                 <!-- Modal Header -->
                 <div class="modal-header">
-                <h4 class="modal-title">Modal Heading</h4>
+                <h4 class="modal-title">Add Card</h4>
                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
         
                 <!-- Modal body -->
                 <div class="modal-body">
-                Modal body..
-                </div>
-        
-                <!-- Modal footer -->
-                <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                    <form method="POST" action="{{ url_for('deck', deck_id=deck_id) }}">
+                        <div class="mb-3 mt-3">
+                          <input type="front" class="form-control" id="card_front" placeholder="Front" name="card_front">
+                        </div>
+                        <div class="mb-3 mt-3">
+                            <input type="back" class="form-control" id="card_back" placeholder="Back" name="card_back">
+                          </div>
+                        <button type="submit" class="btn btn-danger" data-bs-dismiss="modal">Submit</button>
+                      </form>
                 </div>
         
             </div>
