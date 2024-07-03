@@ -39,8 +39,10 @@ cards = [
     {"card_id": 26, "deck_id": 2, "card_front": "Mutiny On the Bounty", "card_back": "1935"}
 ]
 
-@app.route("/")
+@app.route("/", methods=['GET', 'POST'])
 def homePage():
+    if request.method == 'POST':
+        decks.append({"deck_id": len(decks), "deck_name": request.form['deck_name']})
     return render_template("home.html", decks = decks)
 
 @app.route("/deck/<deck_id>")
