@@ -35,18 +35,18 @@
         
                 <!-- Modal Header -->
                 <div class="modal-header">
-                <h4 class="modal-title">Modal Heading</h4>
+                <h4 class="modal-title">Add Deck</h4>
                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
         
                 <!-- Modal body -->
                 <div class="modal-body">
-                Modal body..
-                </div>
-        
-                <!-- Modal footer -->
-                <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                    <form method="POST" action="{{ url_for('home') }}">
+                        <div class="mb-3 mt-3">
+                          <input type="name" class="form-control" id="deck_name" placeholder="Name" name="deck_name">
+                        </div>
+                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Submit</button>
+                      </form>
                 </div>
         
             </div>
